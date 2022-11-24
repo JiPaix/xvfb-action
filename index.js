@@ -27,8 +27,7 @@ async function main() {
 }
 
 async function runCommandWithXvfb(command, directory, options) {
-    const optionsArgument = options ? `-s "${options}"` : '';
-    command = `xvfb-run ${optionsArgument} ${command}`;
+    command = `xvfb-run ${options} ${command}`;
 
     try {
         await runCommand(command, directory)
